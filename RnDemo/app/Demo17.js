@@ -18,22 +18,22 @@ export default class Demo17 extends Component {
     this._refresh = this._refresh.bind(this);
 
   }
-  _refresh () {
+  _refresh() {
     // you must return Promise everytime
     return new Promise((resolve) => {
-      setTimeout(()=>{
+      setTimeout(() => {
         // some refresh process should come here
-        this.setState({cards: this.state.cards.concat([this.state.cards.length + 1])})
-        resolve(); 
+        this.setState({ cards: this.state.cards.concat([this.state.cards.length + 1]) })
+        resolve();
       }, 500)
     })
   }
   render() {
     return (
-      <View style={{flex:1}}>
-      
+      <View style={{ flex: 1 }}>
+
         <PTRView
-          style={{backgroundColor:'#F5FCFF'}}
+          style={{ backgroundColor: '#F5FCFF' }}
           onRefresh={this._refresh}
         >
           <View style={styles.container}>
